@@ -37,6 +37,7 @@ dependencies:
   cupertino_icons: ^1.0.2
   http: ^1.1.0
   velocity_x: ^4.1.1
+  uuid: ^3.0.7
 
 dev_dependencies:
   flutter_test:
