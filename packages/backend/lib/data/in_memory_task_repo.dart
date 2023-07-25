@@ -3,18 +3,18 @@ import 'package:shared/shared.dart';
 /// A class that implements [TaskRepo] using an in-memory list.
 class InMemoryTaskRepo implements TaskRepo {
   List<Task> _data = [
-    Task(
-      id: '1',
-      title: 'Task 1',
-    ),
-    Task(
-      id: '2',
-      title: 'Task 2',
-    ),
-    Task(
-      id: '3',
-      title: 'Task 3',
-    ),
+    // Task(
+    //   id: '1',
+    //   title: 'Buy iPhone',
+    // ),
+    // Task(
+    //   id: '2',
+    //   title: 'Throw iPhone',
+    // ),
+    // Task(
+    //   id: '3',
+    //   title: 'Buy another iPhone',
+    // ),
   ];
 
   /// Returns the list of tasks.
@@ -22,7 +22,7 @@ class InMemoryTaskRepo implements TaskRepo {
 
   @override
   Future<Task> addTask(Task task) async {
-    final newTask = task.copyWith(id: '${_data.length + 1}');
+    final newTask = task;
     _data.add(newTask);
     return newTask;
   }
