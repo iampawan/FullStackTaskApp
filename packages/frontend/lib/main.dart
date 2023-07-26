@@ -7,7 +7,7 @@ import 'home_page.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
-  runApp(VxState(store: TaskStore(), child: const MyApp()));
+  runApp(const MyApp());
 }
 
 class MyApp extends StatelessWidget {
@@ -16,13 +16,19 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     GetAllTasksMutation();
-    return MaterialApp(
-      title: 'Task App',
-      debugShowCheckedModeBanner: false,
-      theme: ThemeData(
-        useMaterial3: true,
-      ),
-      home: const HomePage(),
-    );
+    return VxApp(
+        store: TaskStore(),
+        builder: (context, appData) {
+          return MaterialApp(
+            title: 'Task App',
+            debugShowCheckedModeBanner: false,
+            theme: ThemeData(
+              useMaterial3: true,
+              brightness:
+                  appData.isDarkMode ? Brightness.dark : Brightness.light,
+            ),
+            home: const HomePage(),
+          );
+        });
   }
 }

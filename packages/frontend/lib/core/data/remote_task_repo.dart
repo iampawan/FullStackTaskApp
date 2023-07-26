@@ -9,7 +9,9 @@ class RemoteTaskRepo implements TaskRepo {
 
   @override
   Future<List<Task>> fetchAllTasks() async {
-    final response = await client.get(Uri.parse("$baseUrl/tasks"));
+    final response = await client.get(
+      Uri.parse("$baseUrl/tasks"),
+    );
     final json = response.body;
     return [for (final task in jsonDecode(json)) Task.fromJson(task)];
   }

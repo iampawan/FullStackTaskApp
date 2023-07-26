@@ -27,13 +27,14 @@ class TaskListView extends StatelessWidget {
                       return ListTile(
                         title: Text(task.title)
                             .text
+                            .white
                             .xl
                             .semiBold
                             .make()
                             .box
                             .p32
                             .rounded
-                            .color(Vx.randomColor)
+                            .color(context.theme.primaryColor)
                             .make(),
                         subtitle: task.isCompleted
                             ? const Text("Completed").px8()

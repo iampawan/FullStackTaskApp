@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:velocity_x/velocity_x.dart';
 
 import 'core/mutations/get_all_tasks.dart';
 import 'widgets/add_task_widget.dart';
@@ -13,6 +14,9 @@ class HomePage extends StatelessWidget {
       appBar: AppBar(
         title: const Text("Tasks"),
         actions: [
+          const VxDarkModeButton(
+            showSingleIcon: true,
+          ),
           IconButton(
             onPressed: () => GetAllTasksMutation(),
             icon: const Icon(Icons.refresh),
